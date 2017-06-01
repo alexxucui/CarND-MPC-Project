@@ -8,6 +8,10 @@ using CppAD::AD;
 // TODO: Set the timestep length and duration
 // predicting to long is not good and will incrase instability
 
+// If the N*dt is to large, the prediction might compromise for the long end and prediction close to the car may be very bad.
+// Base on the speed of 70 I found 1s is a good choice
+// Since the latency is about 0.1s so I choose 0.1s here
+
 size_t N = 10;    // try 10,15
 double dt = 0.10; // try 0.01, 0.1, 0.15  and this is the best setting
 
@@ -26,11 +30,14 @@ const double Lf = 2.67;
 
 double ref_cte = 0;
 double ref_epsi = 0;
+
+// I have tried up to 70 mph and the model can still run very well
 double ref_v = 70;    // try 40, 50, 60, 70
 
 // The solver takes all the state variables and actuator
 // variables in a singular vector. Thus, we should to establish
 // when one variable starts and another ends to make our lifes easier.
+// start index for each state
 size_t x_start = 0;
 size_t y_start = x_start + N;
 size_t psi_start = y_start + N;
@@ -59,6 +66,8 @@ class FG_eval {
     // any anything you think may be beneficial.
 
     // cost with reference state
+    // I have tuned three weights here to optimize the model
+
     for (int i = 0; i < N; ++i) {
       fg[0] += 4000 * CppAD::pow(vars[cte_start + i] - ref_cte, 2);
       fg[0] += CppAD::pow(vars[epsi_start + i] - ref_epsi, 2);
@@ -273,12 +282,11 @@ vector<double> MPC::Solve(Eigen::VectorXd x0, Eigen::VectorXd coeffs) {
   // {...} is shorthand for creating a vector, so auto x1 = {1.0,2.0}
   // creates a 2 element double vector.
   
-/*  return {solution.x[x_start + 1],   solution.x[y_start + 1],
-          solution.x[psi_start + 1], solution.x[v_start + 1],
-          solution.x[cte_start + 1], solution.x[epsi_start + 1],
-          solution.x[delta_start],   solution.x[a_start]};*/
 
   // average the first two actuation 
+  // since the latency is about 0.1s, I used the average the first two actuation to solve the latency issue
+  // Also you can try to use dt that is longder than the latency but I found this method is more stable
+
   double delta = (solution.x[delta_start] + solution.x[delta_start+1]) / 2;
   double a = (solution.x[a_start] + solution.x[a_start+1]) / 2;
 
