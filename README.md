@@ -9,7 +9,7 @@ Self-Driving Car Engineer Nanodegree Program
 
 ## Model
 
-In this project, we will implement a kinematic model to control the vehicle around the track. Kinematic models are simplifications of dynamic models that ignore tire forces, gravity, and mass. This simplification reduces the accuracy of the models, but it also makes them more tractable. At low and moderate speeds, kinematic models often approximate the actual vehicle dynamics. In this project, I will be able to achieve the spees of 70 MPH.
+In this project, we will implement a kinematic model to control the vehicle around the track. Kinematic models are simplifications of dynamic models that ignore tire forces, gravity, and mass. This simplification reduces the accuracy of the models, but it also makes them more tractable. At low and moderate speeds, kinematic models often approximate the actual vehicle dynamics. In this project, I am able to achieve the speed of 70 MPH.
 
 The model will optimize the actuators input to simulate the vehicle trajactory and minimize the cost like cross-track error, etc.
 
@@ -89,12 +89,10 @@ I compensate for the latency by optimizing the cost function and averaging the f
 
 ## Basic Build Instructions
 
-
 1. Clone this repo.
 2. Make a build directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
 4. Run it: `./mpc`.
-
 
 ## Tips
 
