@@ -91,6 +91,17 @@ int main() {
           double py = j[1]["y"];
           double psi = j[1]["psi"];
           double v = j[1]["speed"];
+          double delta = j[1]["steering_angle"];
+          double acceleration = j[1]["throttle"];
+
+          // v = v * 0.447;
+
+          // predict into the future at latency time
+          //double latency = 0.1;
+          //px = px + v*cos(psi)*latency;
+          //py = py + v*sin(psi)*latency;
+          //psi = psi + v*delta/2.67*latency;
+          //v = v + acceleration*latency;
 
           /*
           * TODO: Calculate steeering angle and throttle using MPC.
@@ -188,7 +199,7 @@ int main() {
           //
           // NOTE: REMEMBER TO SET THIS TO 100 MILLISECONDS BEFORE
           // SUBMITTING.
-          this_thread::sleep_for(chrono::milliseconds(100));
+          this_thread::sleep_for(chrono::milliseconds(0));
           ws.send(msg.data(), msg.length(), uWS::OpCode::TEXT);
         }
       } else {

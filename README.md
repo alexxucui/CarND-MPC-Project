@@ -2,6 +2,43 @@
 Self-Driving Car Engineer Nanodegree Program
 
 ---
+## MPC Demo
+
+![MPC Demo](https://www.youtube.com/watch?v=_8tozkATdKc)
+
+## Model
+
+In this project, we will implement a kinematic model to control the vehicle around the track. Kinematic models are simplifications of dynamic models that ignore tire forces, gravity, and mass. This simplification reduces the accuracy of the models, but it also makes them more tractable. At low and moderate speeds, kinematic models often approximate the actual vehicle dynamics. In this project, I will be able to achieve the spees of 70 MPH.
+
+The model will optimize the actuators input to simulate the vehicle trajactory and minimize the cost like cross-track error, etc.
+
+### State
+
+The state vector is [x, y, ψ, ν, δ, a], where
+- x: cars x global position
+- y: cars y global position
+- ψ (psi): vehicle's angle in radians from the x-direction (radians)
+- ν : vehicle's velocity
+- δ (delta): steering angle
+- a : acceleration (throttle)
+
+### Actuators
+
+- δ (delta): steering angle
+- a : acceleration (throttle)
+
+These two are also included in the state vector.
+
+### Update equations
+
+![kinematic model equations](https://github.com/alexxucui/CarND-MPC-Project/blob/master/img/Screen%20Shot%202017-05-30%20at%209.06.47%20PM.png)
+
+
+## Parameter tuning
+
+## Latency
+
+
 
 ## Dependencies
 
