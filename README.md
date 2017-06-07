@@ -4,7 +4,8 @@ Self-Driving Car Engineer Nanodegree Program
 ---
 ## MPC Demo
 
-![MPC Demo](https://www.youtube.com/watch?v=_8tozkATdKc)
+[![IMAGE ALT TEXT HERE](https://www.youtube.com/watch?v=_8tozkATdKc/0.jpg)](https://www.youtube.com/watch?v=_8tozkATdKc)
+
 
 ## Model
 
@@ -33,8 +34,10 @@ These two are also included in the state vector.
 
 ![kinematic model equations](https://github.com/alexxucui/CarND-MPC-Project/blob/master/img/Screen%20Shot%202017-05-30%20at%209.06.47%20PM.png)
 
-
 ## Parameter tuning
+
+
+
 
 ## Latency
 
