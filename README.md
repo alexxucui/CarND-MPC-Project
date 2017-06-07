@@ -4,7 +4,7 @@ Self-Driving Car Engineer Nanodegree Program
 ---
 ## MPC Demo
 
-[![IMAGE ALT TEXT HERE](https://www.youtube.com/watch?v=_8tozkATdKc/0.jpg)](https://www.youtube.com/watch?v=_8tozkATdKc)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/_8tozkATdKc/0.jpg)](https://www.youtube.com/watch?v=_8tozkATdKc)
 
 
 ## Model
