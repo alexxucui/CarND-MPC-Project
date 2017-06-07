@@ -41,7 +41,7 @@ N and dt:
 N is number of timesteps and dt is the time gap between each state.
 Choose to largre N*dt might cause bad fitting and result bad model. I choose N*dt=1s here.
 To compensate the latency, choose dt > latency is also helpful. The choice of dt is also determined by the speed you choose.
-For fast speed you might want to qucik adjustment to control the vehicle. By trial and error, I determined the value N and dt to be 10 and 0.1 and works well
+For fast speed you might want to qucik adjustment to control the vehicle. By trial and error, I determined the value N and dt to be 10 and 0.1 and works well.
 
 
 ## Latency
